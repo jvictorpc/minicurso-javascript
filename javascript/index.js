@@ -1,25 +1,11 @@
 const root = document.querySelector('#root');
+const textContent = "Dificuldade"
 
-const newElement = (tag, content) => {
-    const title = `<${tag}>${content}</${tag}>`;
+const title = Title`
+    color:red;
+    ${textContent}
+    font-size: 30px;
+    ${'texto pequeno'}
+`
 
-    root.insertAdjacentHTML('beforeend', title);
-}
-
-
-newElement('h1 ', 'Dificuldade');
-
-
-
-
-
-/**
-* cria um elemento e insere na div root 
-
-*   const root = document.querySelector('#root');
-    const title = document.createElement('h1');
-    title.textContent = 'Dificuldade';
-
-    root.insertAdjacentElement('beforeend', title);
-    console.log(root); 
-*/
+root.insertAdjacentHTML('beforeend', title);
