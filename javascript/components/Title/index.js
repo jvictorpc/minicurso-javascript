@@ -1,12 +1,9 @@
 //tagged template string
+const Title = (css, textContent) => {
+    console.log(css[0].trim());
 
-function Title (css, textContent, smalltext) {
-    console.log(css);
     return `
-        <h1 style="${css[0]}${css[1]}">
-            ${textContent}
-            <small> ${smalltext}</small>
-        </h1>
+        <h1 style = "${css[0].trim()}">${textContent}</h1>
     `;
 }
 
