@@ -6,5 +6,3 @@ const Title = (css, textContent) => {
         <h1 style = "${css[0].trim()}">${textContent}</h1>
     `;
 }
-
-
