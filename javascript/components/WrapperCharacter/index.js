@@ -18,10 +18,3 @@ const WrapperCharacter = (...character) => {
 }
 
 const wrapperCharacter = WrapperCharacter(cupHead, cupHead, cupHead);
-
-
-
-
-
-
-console.log(wrapperCharacter);

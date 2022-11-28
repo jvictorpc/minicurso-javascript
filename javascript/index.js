@@ -14,3 +14,4 @@ const title = Title`
 
 root.insertAdjacentHTML('beforeend', title);
 root.insertAdjacentHTML('beforeend', wrapperCharacter);
+root.insertAdjacentHTML('beforeend', slide);

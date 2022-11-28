@@ -1,5 +1,11 @@
 const style = `
 <style>
+    :root {
+        --line-height: 10px;
+        --slide-color: #FD6E8A;
+        --action-color: #ECE59A;
+    }
+
     *{
         margin: 0;
         padding: 0;
@@ -24,6 +30,7 @@ const style = `
         font-family: 'Press Start 2P', cursive;
         text-align: center;
         padding-top: 4em;
+        padding-bottom: 8em;
         display:flex;
         flex-direction: column; 
         align-items: center;
@@ -32,7 +39,7 @@ const style = `
 
     .wrapper-character{
         width: 80%;
-        margin: 0 auto;
+        margin:0 auto;
         display:flex;
         align-items: center;
         justify-content: space-around;
