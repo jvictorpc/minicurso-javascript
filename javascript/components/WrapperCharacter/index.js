@@ -10,11 +10,8 @@ const WrapperCharacter = (...character) => {
 
     return `
         <div class = "wrapper-character">  
-            ${character[0].trim()}
-            ${character[1].trim()}
-            ${character[2].trim()}
+            ${character.join(' ')}
         </div>
     `;
 }
 
-const wrapperCharacter = WrapperCharacter(cupHead, cupHead, cupHead);

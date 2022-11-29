@@ -1,28 +1,69 @@
 const stateItems = [true, false, false]; 
 
-function showItems(){
-    const items = stateItems.map(state  => {
+function showItems(stateItems){
+    const itemActive = (pos) => Item`
+        .item.active{
+            transform:scale(1.7);
+        }
+        ${`active pos-${pos}`}
+    `;
+       
+    const item = (pos) => Item`
+        .item {
+            height: calc(var(--line-height) * 3);
+            width: calc(var(--line-height) * 3);
+            background-color: var(--slide-color);
+            border-radius: 50%;
+            transition: transform 100ms linear;
+            cursor: pointer;
+        }
+        ${`pos-${pos}`}
+    `;
+
+       
+
+    const items = stateItems.map((state, index)  => {
         if(state){
-            return itemActive;
+            return itemActive(index+1);
         }
 
-        return item;
+        return item(index+1);
     })
-
     
    return items.join('');
 }
 
+function clearAction(action){
+    action.classList.remove('second');
+    action.classList.remove('third');
+}
+
+
+function createStyle (css) {
+    const head = document.querySelector('head');
+    const style = `
+        <style>
+            ${css}
+        </style>
+    `;
+
+    
+    head.insertAdjacentHTML('beforeend', style);
+}
 
 const Action = (css ) => {
+   createStyle(css);
+   
     return`
-        <li style= "${css}"></li>
+        <li class="action"></li>
     `
 }
 
-const Item = (css, content = '') => {
+const Item = (css, className) => {
+    createStyle(css);
+     console.log(className);
     return `
-        <li style="${css[0].trim()}">${content}</li>
+        <li class="item ${className}" onclick="handleClick(event)"></li>
     `;
 }
 
@@ -33,30 +74,25 @@ const Slide = (css, content) => {
 }
 
 const action = Action`
-    height: calc(var(--line-height) * 4);
-    width: calc(var(--line-height) * 4);
-    background-color: var(--action-color);
-    border-radius: 50%;
-    position: absolute;
-    left: 5px;
+    .action{
+        height: calc(var(--line-height) * 4);
+        width: calc(var(--line-height) * 4);
+        background-color: var(--action-color);
+        border-radius: 50%;
+        position: absolute;
+        left: -4px;
+        transition: transform 300ms linear;
+    }
+    .action.second {
+        transform: translateX(215px);
+    }
+
+    .action.third{
+        transform: translateX(431px);
+    }
     
-
 `
 
-const item = Item`
-    height: calc(var(--line-height) * 3);
-    width: calc(var(--line-height) * 3);
-    background-color: var(--slide-color);
-    border-radius: 50%;
-
-`;
-
-const itemActive = Item`
-    height: calc(var(--line-height) * 5);
-    width: calc(var(--line-height) * 5);
-    background-color: var(--slide-color);
-    border-radius: 50%;
-`
 
 
 const slide = Slide`
@@ -71,6 +107,6 @@ const slide = Slide`
     justify-content: space-between;
     border-radius: 50px;
     position: relative;
-    ${showItems() + action}
+    ${showItems(stateItems) + action}
 `
 

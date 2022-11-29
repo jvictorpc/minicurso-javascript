@@ -42,7 +42,8 @@ const style = `
         margin:0 auto;
         display:flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: center;
+        order:0;
     }
 
   
