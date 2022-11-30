@@ -43,7 +43,6 @@ const style = `
         display:flex;
         align-items: center;
         justify-content: center;
-        order:0;
     }
 
   

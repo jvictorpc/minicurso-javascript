@@ -61,7 +61,7 @@ const Action = (css ) => {
 
 const Item = (css, className) => {
     createStyle(css);
-     console.log(className);
+    
     return `
         <li class="item ${className}" onclick="handleClick(event)"></li>
     `;

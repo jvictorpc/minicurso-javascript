@@ -42,9 +42,7 @@ function handleClick (event) {
         root.removeChild(wrapperStructure);
         wrapperCharacter = WrapperCharacter(cupHead);
         title.insertAdjacentHTML('afterend', wrapperCharacter);
-    }
-
-    
+    } 
 
 }
 

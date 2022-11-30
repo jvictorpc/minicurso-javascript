@@ -2,7 +2,7 @@ const pathCupHead = "../img/dadinho.png";
 
 const cupHead = Character`
     width: 150px;
-    margin: 0 auto;
+    margin: 0 5px;
     ${pathCupHead}
 `;
 
